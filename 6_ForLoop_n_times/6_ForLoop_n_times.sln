@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "6_ForLoop_n_times", "6_ForLoop_n_times.dtproj", "{94C042CC-39D0-4711-9E3C-C2E26BAB0A7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94C042CC-39D0-4711-9E3C-C2E26BAB0A7B}.Development|Default.ActiveCfg = Development
+		{94C042CC-39D0-4711-9E3C-C2E26BAB0A7B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A854E45-8DF9-4740-9C22-BB7F23F3F5B1}
+	EndGlobalSection
+EndGlobal
