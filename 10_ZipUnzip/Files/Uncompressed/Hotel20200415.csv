@@ -1,0 +1,11 @@
+HotelID,HotelName,HotelCategory,City,Country,Address,Coordinates
+"1","Good Night Hotel and Residence","4 Star","Toronto","Canada","1 ABC City Center","43.623409,-79.368683"
+"2","Pink Hotel Toronto","3 Star","Toronto","Canada","999 Kingsway Road","43.623409,-79.368683"
+"3","Tourist In","2 Star","Chicago","USA","ZZZ Broadway","41.881832,-87.623177"
+"4","City Center Hotel","4 Star","New York","USA","SSS Avenue","40.73061,-73.935242"
+"5","Venus  In","3 Star","Adelaide","Australia","XXX Lake Avenue","-34.92123,138.599503"
+"6","Stoppage Inn Express & Suits","3 Star","Reno","USA","11 Knowledge Villa","39.530895,-119.814972"
+"7","Beach Hotel","4 Star","Miami","USA","12 BroadWay Drive","25.778135,-80.1791"
+"8","Traditional Hut Hotel","3 Star","Munnar","India","ZZZ Village Drive","10.089167,7.059723"
+"9","Big Ocean Hotel","4 Star","Miami","USA","AAA Beach Street","25.778135,-80.1791"
+"10","Entertainment Hotel","5 Star","Los Angeles","USA","BBB WestWood","34.052235,-118.243683"
