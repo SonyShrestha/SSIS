@@ -1,0 +1,3 @@
+Punjab,Hoshiarpur,1460010
+W.B,Darjeeling,734101
+U.P,Agra,282001

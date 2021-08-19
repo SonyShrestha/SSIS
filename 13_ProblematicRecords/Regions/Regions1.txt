@@ -1,0 +1,4 @@
+M.P,Bhopal,462001
+M.P,Indore,452001
+Rajasthan,Alwar,301001
+Punjab,Amritsar,143001
