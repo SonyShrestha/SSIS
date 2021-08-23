@@ -193,7 +193,6 @@ An expression or a constraint that uses either the execution results of the prec
 <br>
 <br>
 <br>
-<br>
 <h2>Break Point, Watch Window and Data Viewer</h2>
 Breakpoint
 <br>
@@ -208,7 +207,6 @@ Watch windows are used to monitor the package variables during package execution
 Data Viewer
 <br>
 A data viewer is used to display data between two data flow transformations in SSIS packages.
-<br>
 <br>
 <br>
 <br>
@@ -253,3 +251,89 @@ Paramaters can be configured in Project level and Package level.
 One project can have multiple packages.
 If all packages share common variable, we can set parameters in project level.
 If variables are package specific, we can create package level variables.
+<br><br><br>
+<h2>SQL Agent Job</h2>
+SQL Agent Job allows us to schedule SSIS package or SQL Script to run at desired time.
+<br><br><br>
+<h2>Create Job in SQL Server</h2>
+Pre-requisites:<br>
+<ol>
+<li>SQL Server Agent should be in running mode.</li>
+<li>Prepare Query to automate.</li>
+<li>Go for Job Creation.</li>
+</ol>
+SQL Server Agent is available at the bottom of object explorer in SSMS. We can start it by right clicking and selecting Start option.<br>
+Prepare query that needs to be scheduled.<br>
+To schedule a query, SQL Server Agent-> Jobs-> New Job-> Add General Description-> Add Step (T-SQL if SQL query needs to be scheduled)-> Add Schedules<br>
+Jobs will be created and will be visible under Jobs Section. It will then execute as per schedule. To run it manually, Right click on particular Job and click on Start Job at Step.
+<br><br><br>
+<h2>Build and Deploy SSIS Package</h2>
+<ol>
+<li>Open SSMS with Windows Authnetication Mode.</li>
+<li>Right Click on Integration Services Catalog-> Create Catalog-> Provide password-> OK</li>
+<li>SSISDB folder will be created inside Integration Services Catalog</li>
+<li>Right Click on SSISDB folder-> Create Folder-> Provide Name (say ProjectDeployment)-> OK</li>
+<li>ProjectDeployment folder will be created within which two other folders Projects and Environments will be created.</li>
+<li>In Visual Studio, open your project, under Solution Explorer, Right click on Project Name, Click Build</li>
+<li>Under Solution Explorer, Right Click on Project Name, Click Deploy.</li>
+<li>Under Select Destination Section, Provide server name and required Windows Authentication information with deployment path.</li>
+<li>SSIS Project will be deployed in SQL Server which can be verified by viewing Projects and Environments section in SSMS
+</li>
+</ol>
+<br><br><br>
+<h2>Schedule SSIS Package in SQL Server Agent</h2>
+<ol>
+<li>
+Deploy SSIS Project in SQL Server</li>
+<li>Go to SSMS-> SQL ServerAgent-> Jobs-> New Job</li>
+<li>New Job window will appear</li>
+<li>Under General Category-> Provide General Details(Name and Description)-> OK</li>
+<li>Under Steps Category-> Add new step with type SSIS Package-> OK</li>
+<li>Under Schedules-> Add new schedule-> OK</li>
+<li>Click OK and new Job of type SSIS Package will be created.</li>
+<li>This SSIS Package will then execute on scheduled time period.</li>
+<li>To start it manually, we can right click on Job name and Click on Start Job on Step
+</li>
+</ol>
+<br><br><br>
+<h2>Execute SSIS Package from SSMS and Setting Project and Package Level  Parameters</h2>
+<ol>
+<li>
+As soon as a project is deployed, we will be able to see a Folder with project name under Integration Serives Catalog-> SSISDB-> ProjectFolder</li>
+<li>Under ProjectFolder, two folders will be created: Projects and Environments</li>
+<li>
+On further expansion of Projects Folder, we will get list of all packages under that project</li>
+<li>To execute a specific package, click on corresponding package-> Right Click-> Execute-> Change parameter value if required-> OK</li>
+<li>To configure parameters, Right Click on ProjectName or PackageName-> Configure-> Select Scope (SpecificPackage or All packages and project based on requirement)</li>
+<li>Value can be changed based on: </li>
+<ul>
+<li>Edit Value</li> 
+<li>Use default value from package</li> 
+<li>Use Environment Variables</li>
+</ul>
+<li>We can also change properties value associated with different connection managers. Right Click on ProjectName-> Configure-> Select scope as All packages and project-> Go to Connection Manager tab-> Change value of Property you wish to-> OK
+<br><br><br>
+<h2>Setting Environments</h2>
+<ol>
+<li>In SSMS, Go to Integration Services Catalog-> SSISDB-> ProjectName-> Enviroments-> Right Click-> Create Environment-> Provide Environment Name and Description-> OK</li>
+<li>A environment wil provided name (say TestEnv) will be created</li>
+<li>Right click on TestEnv-> Properties-> Variables tab-> Provide variable nae and its value-> OK</li>
+<li> Right Click on ProjectName-> Configure-> References tab-> Add new environment-> OK</li>
+<li> Right Click on ProjectName-> Configure-> Parameters tab-> Select Scope All packages and project-> Parameters tab-> ...-> Use Environment Variable-> Select desired environment-> OK</li>
+<li>Now whenever we execute a package, environment option can be checked to get value of paramaters from defined environment.</li>
+</ol>
+<br><br><br>
+<h2>Report Generation of SSIS Package</h2>
+<ol>
+<li>
+Report can be generated in three levels:
+<ul>
+<li>Package</li>
+<li>Project</li>
+<li>SSISDB</li>
+</ul>
+</li>
+<li>To view report in Package level, Right click in PackageName under Integration Service Catalogs-SSISDB-ProjectName-Projects-> Reports-> Standard Reports-> All executions</li>
+<li>To view report in Project level, Right click in ProjectName-> Reports-> Standard Reports-> All executions</li>
+<li>To view report in Project level, Right click in ProjectName under Integration Service Catalogs-SSISDB-ProjectName-Projects-> Reports-> Standard Reports-> All executions</li>
+<li>To view report in SSISDB level, Right click in SSISDB under Integration Service Catalogs-> Reports-> Standard Reports-> All executions</li>
